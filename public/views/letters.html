@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Letters / Packages</li>
+            </ul>
+        </div>
+        <div class="col-xs-12">
+            <h3>Letters / Packages</h3>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">            
+            <h3>List of Letters and Packages</h3>
+            <hr>
+            <div class="col-xs-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>
+                                Date
+                            </th>
+                            <th>
+                                Building
+                            </th>
+                            <th>
+                                Description
+                            </th>
+                            <th>
+                                Tracking Code
+                            </th>
+                            <th>
+                                Image
+                            </th>
+                            <th>
+                                Author
+                            </th>
+                            <th>
+                                Letter Status
+                            </th>
+                        </tr>
+                        <tr ng-repeat="letter in letters | orderBy:'-updatedAt'">
+                            <td>
+                                {{letter.updatedAt | date:'medium'}}
+                            </td>
+                            <td>
+                                {{letter.building.name}}
+                            </td>
+                            <td>
+                                {{letter.description}}
+                            </td>
+                            <td>
+                                {{letter.trackingcode}}
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                {{letter.author.firstname}} {{letter.author.lastname}}
+                            </td>
+                            <td>
+                                {{letter.letterStatus}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <p style="padding:20px;"></p>
+            </div>
+        </div>
+    </div>
+</div>

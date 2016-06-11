@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Notice Boards</li>
+            </ul>
+        </div>
+        <div class="col-xs-12">
+            <h3>Notice Boards</h3>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">            
+            <h3>List of Notices</h3>
+            <hr>
+            <ng ng-repeat="noticeboard in noticeboards | orderBy:'-updatedAt'">
+                <div class="col-xs-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                {{noticeboard.updatedAt | date:'medium'}}
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                {{noticeboard.message}}
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <dt>Author</dt>
+                            <dd>{{noticeboard.author.firstname}} {{noticeboard.author.lastname}}</dd>
+                            <dt ng-if="noticeboard.recipient.firstname">Recipient</dt>
+                            <dd>{{noticeboard.recipient.firstname}} {{noticeboard.recipient.lastname}}</dd>
+                        </div>
+                    </div>
+                </div>
+            </ng>
+            <div class="col-xs-12">
+                <p style="padding:20px;"></p>
+            </div>
+        </div>
+    </div>
+</div>

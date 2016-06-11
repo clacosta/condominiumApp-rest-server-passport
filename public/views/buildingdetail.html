@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#/buildings">Buildings</a></li>
+                <li class="active">Buildings Details</li>
+            </ul>
+        </div>
+        <div class="col-xs-12">
+            <h3>Buildings Details</h3>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12" ng-if="!showBuilding">
+            <h3>{{message}}</h3>
+        </div>
+        <div class="col-xs-12" ng-if="showBuilding">
+            <button class="btn btn-xs btn-primary pull-right" type="button" ui-sref="app.buildings">
+                    Back to Buildings
+                </button>
+            <div class="media">
+                <div class="media-left media-top">
+                    <img class="media-object img-thumbnail" ng-src={{building.image}} alt={{building.name}}>
+                </div>
+                <div class="media-body">
+                    <small>Name</small>
+                    <h2 class="media-heading">{{building.name}}</h2>
+                    <small>Description</small>
+                    <p>{{building.description}}</p>
+                </div>
+            </div>
+        </div>      
+        <div class="col-xs-12" ng-if="showResidentes">
+            <h4>List of Residents</h4>
+            <hr>
+            <ul class="media-list">
+                <li class="media" ng-repeat="resident in residentesBuilding">
+                    <div class="media-left media-middle">
+                        <a ui-sref="app.residentdetails({id: resident._id})">
+                            <img class="media-object img-thumbnail" ng-src={{resident.image}} alt={{resident.firstname}}>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <small>Name</small>
+                        <h3 class="media-heading">{{resident.firstname}} {{resident.lastname}}</h3>
+                        <small>Phone</small>
+                        <p>{{resident.phone}}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-12">
+            <p style="padding:20px;"></p>
+        </div>
+    </div>
+</div>

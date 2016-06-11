@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Buildings</li>
+            </ul>
+        </div>
+        <div class="col-xs-12">
+            <h3>Buildings</h3>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">            
+            <h3>List of Buildings</h3>
+            <hr>
+            <ul class="media-list">
+                <li class="media" ng-repeat="building in buildings">
+                    <div class="media-left media-middle">
+                        <a ui-sref="app.buildingdetails({id: building._id})">
+                            <img class="media-object img-thumbnail" ng-src={{building.image}} alt={{building.name}}>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <small>Name</small>
+                        <h3 class="media-heading">{{building.name}}</h3>
+                        <small>Description</small>
+                        <p>{{building.description}}</p>
+                    </div>                    
+                </li>
+            </ul>
+            <div class="col-xs-12">
+                <p style="padding:20px;"></p>
+            </div>
+        </div>
+    </div>
+</div>

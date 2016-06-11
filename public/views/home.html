@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="col-xs-12">
+        <p style="padding:10px;"></p>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <img src="./images/condominium.jpg" class="img-thumbnail" alt="Condominium App">
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 align=center class="panel-title">Ready to wake up every morning to live the lake life?</h3>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 align=center class="panel-title">Welcome to the Residential Green Lake</h3>
+                </div>
+                <div class="panel-body">
+                    <dl class="dl-horizontal">
+                        <dt>Our Address</dt>
+                        <dd>
+                            <address>
+                                345 NE 67nd St.<br> Seattle, WA 67890<br> USA
+                                <br>
+                                <i class="fa fa-phone"></i>: +1 31 3333 3333<br>
+                                <i class="fa fa-fax"></i>: +1 31 4444 4444<br>
+                                <i class="fa fa-envelope"></i>:
+                                <a href="mailto:contact@condominiumapp.app">
+                         contact@condominiumapp.app</a>
+                            </address>
+                        </dd>
+                        <dt>Manager</dt>
+                        <dd>Cláudio Costa</dd>
+                        <dt>Residents</dt>
+                        <dd>{{residentsCount}}</dd>
+                        <dt>Buildings</dt>
+                        <dd>{{buildingsCount}}</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>Public Notice Board</h3>
+            <hr>
+        </div>
+        <ng ng-repeat="noticeboard in noticeboards | orderBy:'-updatedAt'">
+            <div class="col-xs-6">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            {{noticeboard.updatedAt | date:'medium'}}
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            {{noticeboard.message}}
+                        </p>
+                    </div>
+                    <div class="panel-footer">
+                        <dt>Author</dt>
+                        <dd>{{noticeboard.author.firstname}} {{noticeboard.author.lastname}}</dd>
+                        <dt ng-if="noticeboard.recipient.firstname">Recipient</dt>
+                        <dd>{{noticeboard.recipient.firstname}} {{noticeboard.recipient.lastname}}</dd>
+                    </div>
+                </div>
+            </div>
+        </ng>
+    </div>
+    <div class="col-xs-12">
+        <p style="padding:20px;"></p>
+    </div>
+</div>

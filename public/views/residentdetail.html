@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#/residents">Residents</a></li>
+                <li class="active">Resident Details</li>
+            </ul>
+        </div>
+        <div class="col-xs-12">
+            <h3>Residents Details</h3>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12" ng-if="!showResident">
+            <h3>{{message}}</h3>
+        </div>
+        <div class="col-xs-12" ng-if="showResident">
+            <button class="btn btn-xs btn-primary pull-right" type="button" ui-sref="app.residents">
+                    Back to Residentes
+                </button>
+            <div class="media">
+                <div class="media-left media-top">
+                    <img class="media-object img-thumbnail" ng-src={{resident.image}} alt={{resident.firstname}}>
+                </div>
+                <div class="media-body">
+                    <small>Name</small>
+                    <h2 class="media-heading">{{resident.firstname}} {{resident.firstname}}</h2>
+                    <small>Phone</small>
+                    <p>{{resident.phone}}</p>
+                    <small>Build</small>
+                    <p>{{resident.building.name}}</p>
+                    <small>Description</small>
+                    <p>{{resident.description}}</p>
+                </div>
+            </div>
+        </div>        
+        <div class="col-xs-12">
+            <p style="padding:20px;"></p>
+        </div>
+    </div>
+</div>
