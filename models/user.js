@@ -18,6 +18,18 @@ var User = new Schema({
     admin:   {
         type: Boolean,
         default: false
+    },
+    usertype: {
+        type: Number,        
+        required: true
+    },
+    image: {
+        type: String,
+        required: true
+    },
+    resident: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Resident'
     }
 });
 

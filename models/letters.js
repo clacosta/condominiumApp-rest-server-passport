@@ -17,8 +17,7 @@ var lettersSchema = new Schema({
         default: ''
     },
     letterStatus: {
-        type: Number,
-        default: '0',
+        type: Number,        
         required: true
     },
     author: {
